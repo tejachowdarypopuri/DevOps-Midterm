@@ -1,5 +1,15 @@
-#Dockerfile, image, container
+# Use an official Python runtime as a parent image
+FROM python:3.8
 
-FROM python:3.8-slim-buster
-COPY hello.py .
-CMD ["python3", "hello.py"]
+# Set the working directory to /app
+WORKDIR /app
+
+# Clone the code from your GitHub repository
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/tejachowdarypopuri/DevOps-Midterm.git
+
+# Set the working directory to the cloned repository
+WORKDIR /app/your-repo
+
+# Run hello.py when the container launches
+CMD ["python", "hello.py"]
