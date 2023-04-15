@@ -1,8 +1,7 @@
 # Use an official Python runtime as a parent image
 FROM python:3.10
 
-# Set the working directory to /app
-WORKDIR /app
+ADD /app
 
 # Clone the code from your GitHub repository
 RUN apt-get update && apt-get install -y git
